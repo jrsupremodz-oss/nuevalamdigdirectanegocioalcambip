@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negocioalcambio | La herramienta imprescindible para tu negocio en Venezuela</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1196814618515553');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1196814618515553&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Tailwind CSS & Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        app: {
+                            bg: '#0b1120',
+                            card: '#151d30',
+                            cardInner: '#0f172a',
+                            border: '#25324d',
+                            gold: '#facc15',
+                            goldHover: '#eab308',
+                            red: '#ef4444',
+                            blue: '#3b82f6',
+                            blueHover: '#2563eb',
+                            green: '#22c55e',
+                            textMuted: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Styles -->
+    <style>
+        body {
+            background-color: #0b1120;
+            color: #f8fafc;
+        }
+
+        .hero-glow {
+            background: radial-gradient(
+                circle at 50% 15%, 
+                rgba(59, 130, 246, 0.18) 0%, 
+                rgba(250, 204, 21, 0.08) 40%, 
+                rgba(11, 17, 32, 0) 70%
+            );
+        }
+
+        .glass-card {
+            background: rgba(21, 29, 48, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(37, 50, 77, 0.8);
+        }
+
+        .text-gold {
+            color: #facc15;
+        }
+
+        .text-red-logo {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-app-bg text-slate-100 font-sans antialiased selection:bg-app-blue selection:text-white pb-16 md:pb-0">
+
+    <!-- ========================================== -->
+    <!-- URGENCY TIMER BAR                          -->
+    <!-- ========================================== -->
+    <div class="bg-gradient-to-r from-red-600 via-amber-500 to-red-600 text-slate-950 font-bold text-xs sm:text-sm py-2 px-4 text-center shadow-md flex items-center justify-center space-x-2">
+        <i data-lucide="flame" class="w-4 h-4 fill-current text-slate-950"></i>
+        <span>¡OFERTA ESPECIAL 50% DCTO! La oportunidad expira en:</span>
+        <span id="countdown-timer" class="font-mono bg-slate-950 text-amber-400 px-2 py-0.5 rounded text-sm tracking-widest font-black">10:00</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- HEADER / NAVIGATION BAR                    -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-40 bg-app-bg/90 backdrop-blur-md border-b border-app-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-amber-500/20">
+                    <span class="text-2xl font-extrabold text-slate-900">$</span>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-gold">Negocio<span class="text-red-logo">alcambio</span></span>
+                    <span class="block text-[10px] text-slate-400 font-medium -mt-1 tracking-wider">marketjunior.com</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#beneficios" class="hover:text-app-gold transition-colors">Beneficios</a>
+                <a href="#como-funciona" class="hover:text-app-gold transition-colors">¿Cómo funciona?</a>
+                <a href="#precios" class="hover:text-app-gold transition-colors">Precio de Oferta</a>
+                <a href="#preguntas" class="hover:text-app-gold transition-colors">Preguntas</a>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center space-x-3">
+                <button onclick="openRegisterModal()" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black px-5 py-2.5 rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center space-x-2">
+                    <span>Comprar con 50% DCTO</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION                               -->
+    <!-- ========================================== -->
+    <section class="relative pt-10 pb-16 md:pt-16 md:pb-20 hero-glow overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                
+                <!-- Badges & Social Proof -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                    <div class="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm">
+                        <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+                        <span>¡50% DE DESCUENTO - PAGO ÚNICO VITALICIO!</span>
+                    </div>
+
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-slate-300">
+                        <span class="flex -space-x-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        </span>
+                        <span>Usado por <strong class="text-white font-bold">+5,000 comerciantes</strong> en Venezuela</span>
+                    </div>
+                </div>
+
+                <!-- Main Title & Subtitle -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+                    Maneja los precios de tu negocio en Venezuela <span class="text-app-gold">sin perder dinero</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 font-normal leading-relaxed">
+                    Calcula presupuestos, actualiza precios al cambio de la tasa oficial del <strong>BCV al instante</strong> y vende con rapidez desde tu teléfono o computadora.
+                </p>
+
+                <!-- Pricing & Offer CTA Box -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-app-border mb-6 text-left">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block">Licencia Vitalicia</span>
+                                <span class="bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">AHORRA 50%</span>
+                            </div>
+                            <div class="flex items-baseline space-x-3 mt-1">
+                                <span class="text-base text-slate-400 line-through font-bold">$9.99 USD</span>
+                                <span class="text-3xl sm:text-4xl font-black text-emerald-400">$4.99 USD</span>
+                                <span class="text-xs font-bold text-slate-950 bg-app-gold px-2.5 py-1 rounded-md uppercase">a Tasa BCV</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-2 flex items-center gap-1">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                <span><em>Un solo pago para siempre. Cero mensualidades.</em></span>
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-auto">
+                            <button onclick="openRegisterModal()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-base sm:text-lg px-8 py-4 rounded-xl transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center space-x-2">
+                                <span>Comprar Ahora ($4.99)</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex items-center justify-center space-x-4 text-xs text-slate-400">
+                    <span class="flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Pago Móvil a Tasa BCV
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> Activación Instantánea
+                    </span>
+                    <span class="hidden sm:flex items-center gap-1">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i> Garantía de Acceso Vitalicio
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- COMPARISON & BENEFITS SECTION              -->
+    <!-- ========================================== -->
+    <section id="beneficios" class="py-16 bg-app-card/60 border-y border-app-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    ¿Te cuesta mantener los precios al día en tu negocio?
+                </h2>
+                <p class="text-slate-400 text-lg">
+                    Lidiar con variaciones cambiarías, sacar cuentas manuales en la calculadora y perder dinero por errores en cobros ya no tiene que ser tu día a día.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Without App -->
+                <div class="bg-red-950/20 border border-red-500/30 p-8 rounded-2xl">
+                    <div class="flex items-center space-x-3 text-red-400 font-bold text-lg mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+                            <i data-lucide="x-circle" class="w-6 h-6 text-red-500"></i>
+                        </div>
+                        <h3>Sin Negocioalcambio</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="minus-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Pierdes minutos sacando cuentas en la calculadora común con clientes en caja.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="minus-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Riesgo constante de cobros equivocados y pérdidas en bolívares.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="minus-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Presupuestos desactualizados que generan desconfianza en tus clientes.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="minus-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Estrés diario buscando la tasa oficial en internet.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- With App -->
+                <div class="bg-emerald-950/20 border border-emerald-500/30 p-8 rounded-2xl relative">
+                    <div class="flex items-center space-x-3 text-app-gold font-bold text-lg mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-app-gold"></i>
+                        </div>
+                        <h3>Con Negocioalcambio</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-200 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check" class="w-5 h-5 text-app-green flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Tasa BCV Oficial en tiempo real</strong> siempre sincronizada.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check" class="w-5 h-5 text-app-green flex-shrink-0 mt-0.5"></i>
+                            <span>Cálculos exactos en Bolívares, Euros, USDT y Promedio instantáneamente.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check" class="w-5 h-5 text-app-green flex-shrink-0 mt-0.5"></i>
+                            <span>Emisión y envío rápido de cotizaciones impecables directamente por WhatsApp.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check" class="w-5 h-5 text-app-green flex-shrink-0 mt-0.5"></i>
+                            <span>Acceso rápido desde tu Android, iPhone, Tablet o Laptop sin instalar APKs pesadas.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- FEATURES HIGHLIGHTS                        -->
+    <!-- ========================================== -->
+    <section id="como-funciona" class="py-20 bg-app-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-app-gold text-xs font-extrabold uppercase tracking-widest">Diseñado para la realidad de Venezuela</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                    Todo lo que tu negocio necesita en una sola app
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-app-card p-8 rounded-2xl border border-app-border hover:border-app-gold/40 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/10 text-app-gold rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tasa Oficial Automática</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sincronización directa con el Banco Central de Venezuela. Siempre sabrás cuál es el cambio oficial sin perder tiempo buscando.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-app-card p-8 rounded-2xl border border-app-border hover:border-app-blue/40 transition-all">
+                    <div class="w-12 h-12 bg-blue-500/10 text-app-blue rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="calculator" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Conversor Multimoneda</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Convierte fácilmente entre Dólar BCV, Euro, USDT y Tasa Promedio con tan solo presionar un botón en tu pantalla.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-app-card p-8 rounded-2xl border border-app-border hover:border-emerald-500/40 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="send" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Presupuestos a WhatsApp</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Agrega productos, genera un resumen formateado y envíalo a tus clientes con un clic para cerrar ventas rápido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- PRICING SECTION                            -->
+    <!-- ========================================== -->
+    <section id="precios" class="py-20 bg-app-card/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-red-400 text-xs font-extrabold uppercase tracking-widest">🔥 Oferta Especial 50% DCTO</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                    Un precio único para transformar tu negocio
+                </h2>
+                <p class="text-slate-400 mt-2">Acceso vitalicio para siempre. Sin mensualidades ni cobros adicionales.</p>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="max-w-md mx-auto bg-app-card rounded-3xl p-8 sm:p-10 text-white shadow-2xl relative border-2 border-amber-500/50">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-amber-500 text-slate-950 font-black text-xs tracking-wider uppercase py-1.5 px-5 rounded-full shadow-lg flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 50% DE DESCUENTO HOY
+                </div>
+
+                <div class="text-center mb-8 pt-2">
+                    <h3 class="text-2xl font-bold text-white">Licencia Vitalicia Completa</h3>
+                    <p class="text-slate-400 text-xs mt-1">Acceso ilimitado para siempre</p>
+                    
+                    <div class="mt-6 flex items-baseline justify-center space-x-3">
+                        <span class="text-xl text-slate-400 line-through font-bold">$9.99</span>
+                        <span class="text-5xl font-black text-emerald-400">$4.99</span>
+                        <span class="text-slate-300 font-bold">USD</span>
+                    </div>
+
+                    <div class="inline-block bg-app-gold/10 text-app-gold border border-app-gold/30 text-xs font-extrabold px-3 py-1 rounded-md mt-3 uppercase">
+                        Pagadero en Bolívares a Tasa BCV
+                    </div>
+
+                    <p class="text-xs text-slate-300 mt-3 font-semibold flex items-center justify-center gap-1">
+                        <i data-lucide="coffee" class="w-4 h-4 text-app-gold"></i>
+                        <span>¡Cuesta menos que un solo almuerzo! Pago único.</span>
+                    </p>
+                </div>
+
+                <ul class="space-y-4 text-sm text-slate-300 mb-8 border-t border-app-border pt-6">
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span><strong>Acceso Vitalicio Garantizado</strong></span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span><strong>Pago Único de $4.99</strong> (50% de descuento)</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span>Tasa Oficial BCV actualizada al instante</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span>Conversor Dólar BCV, Euro, USDT y Promedio</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span>Generador rápido de presupuestos comerciales</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        <span>Pago Móvil en Bolívares a Tasa BCV</span>
+                    </li>
+                </ul>
+
+                <button onclick="openRegisterModal()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-center py-4 rounded-xl shadow-xl shadow-emerald-500/25 transition-all flex items-center justify-center space-x-2 text-base">
+                    <span>Obtener Licencia Ahora ($4.99)</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    Garantía de activación inmediata tras confirmación.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- TESTIMONIALS SECTION                       -->
+    <!-- ========================================== -->
+    <section class="py-16 bg-app-bg border-t border-app-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-1">Comunidad en Crecimiento</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Más de 5,000 negocios confían en nosotros</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-app-card p-6 rounded-2xl border border-app-border">
+                    <div class="flex text-app-gold mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-4">"Antes perdía demasiado tiempo calculando las ventas de la tienda al cambio oficial. Compré la aplicación y en segundos sé cuánto cobrar. Valen más de lo que cuesta."</p>
+                    <div class="font-bold text-white text-sm">Carlos Mendoza</div>
+                    <div class="text-xs text-slate-400">Tienda de Repuestos, Caracas</div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-app-card p-6 rounded-2xl border border-app-border">
+                    <div class="flex text-app-gold mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-4">"Aproveché la oferta de $4.99 por Pago Móvil a tasa BCV y me activaron al instante. Una excelente herramienta para mi negocio."</p>
+                    <div class="font-bold text-white text-sm">María Fernanda Pérez</div>
+                    <div class="text-xs text-slate-400">Emprendedora, Valencia</div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-app-card p-6 rounded-2xl border border-app-border">
+                    <div class="flex text-app-gold mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-4">"Enviar las notas de pago directo a WhatsApp con la tasa oficial clara le da mucha confianza a mis clientes. 100% recomendado."</p>
+                    <div class="font-bold text-white text-sm">José Luis Rivas</div>
+                    <div class="text-xs text-slate-400">Servicios Técnicos, Maracaibo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- FREQUENTLY ASKED QUESTIONS (FAQ)           -->
+    <!-- ========================================== -->
+    <section id="preguntas" class="py-20 bg-app-card/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white">Preguntas Frecuentes</h2>
+                <p class="text-slate-400 mt-2">Resolvemos todas tus dudas antes de comprar</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-app-card p-6 rounded-2xl border border-app-border [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-lg">
+                        <span>¿Cómo funciona el proceso de compra y activación?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-app-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                        Al presionar el botón de compra, completas tus datos y te redirigimos inmediatamente a WhatsApp con los datos de Pago Móvil. Al enviar tu comprobante, tu acceso vitalicio es activado de forma inmediata.
+                    </p>
+                </details>
+
+                <details class="group bg-app-card p-6 rounded-2xl border border-app-border [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-lg">
+                        <span>¿El pago de $4.99 es mensual o único?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-app-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                        <strong>Es un PAGO ÚNICO vitalicio.</strong> No cobramos mensualidades. Pagas el equivalente a $4.99 USD calculados a la Tasa BCV del día a través de Pago Móvil.
+                    </p>
+                </details>
+
+                <details class="group bg-app-card p-6 rounded-2xl border border-app-border [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-lg">
+                        <span>¿Qué datos necesito para el Pago Móvil?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-app-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                        El pago se realiza al banco BNC, Teléfono 04169485195, CI/RIF 21271099, calculando $4.99 USD a la tasa BCV oficial del día.
+                    </p>
+                </details>
+
+                <details class="group bg-app-card p-6 rounded-2xl border border-app-border [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-lg">
+                        <span>¿Debo descargar alguna aplicación de la Play Store?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-app-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                        No requiere descargas pesadas que ocupen espacio en la memoria. Funciona directamente desde el navegador de tu teléfono móvil (Android o iPhone), Tablet o Laptop.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- FINAL CALL TO ACTION BANNER                -->
+    <!-- ========================================== -->
+    <section class="py-16 bg-gradient-to-br from-blue-700 via-app-blue to-blue-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Únete a más de 5,000 negocios que optimizan sus cuentas hoy</h2>
+            <p class="text-blue-100 text-lg mb-8">Aprovecha la oferta especial del 50% DCTO: solo $4.99 pago único a tasa oficial BCV.</p>
+            
+            <button onclick="openRegisterModal()" class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-lg px-8 py-4 rounded-xl shadow-2xl transition-all">
+                <span>Comprar Acceso Vitalicio ($4.99)</span>
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- FLOATING MOBILE BOTTOM BAR                 -->
+    <!-- ========================================== -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0b1120]/95 backdrop-blur-md border-t border-app-border p-3 z-30 shadow-2xl flex items-center justify-between">
+        <div>
+            <span class="text-[11px] text-slate-400 block line-through">$9.99 USD</span>
+            <span class="font-extrabold text-emerald-400 text-base">$4.99 <span class="text-app-gold text-xs">@ BCV</span></span>
+        </div>
+        <button onclick="openRegisterModal()" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-xs px-5 py-2.5 rounded-xl shadow-lg flex items-center space-x-1">
+            <span>Comprar Ahora</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="bg-app-card text-slate-400 py-12 border-t border-app-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-slate-950 text-base">
+                        $
+                    </div>
+                    <span class="font-extrabold text-white text-base">Negocioalcambio.marketjunior.com</span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                    <button onclick="openModal('modal-terminos')" class="hover:text-app-gold transition-colors underline-offset-4 hover:underline">Términos y Condiciones</button>
+                    <button onclick="openModal('modal-privacidad')" class="hover:text-app-gold transition-colors underline-offset-4 hover:underline">Políticas de Privacidad</button>
+                    <a href="mailto:soporte@marketjunior.com" class="hover:text-app-gold transition-colors">Soporte</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-app-border text-center text-xs text-slate-500">
+                <p>&copy; <span id="year"></span> Negocioalcambio - MarketJunior. Todos los derechos reservados.</p>
+                <p class="mt-2 text-slate-500">Las tasas de cambio mostradas son referenciales basadas en los boletines informativos del Banco Central de Venezuela (BCV).</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- MODAL: TÉRMINOS Y CONDICIONES              -->
+    <!-- ========================================== -->
+    <div id="modal-terminos" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-app-card rounded-2xl max-w-2xl w-full max-h-[80vh] flex flex-col shadow-2xl overflow-hidden border border-app-border">
+            <div class="p-6 border-b border-app-border flex justify-between items-center bg-[#182238]">
+                <h3 class="text-xl font-bold text-white">Términos y Condiciones de Uso</h3>
+                <button onclick="closeModal('modal-terminos')" class="text-slate-400 hover:text-white p-1">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-300 leading-relaxed">
+                <p><strong>1. Aceptación de los Términos:</strong> Al ingresar a <em>negocioalcambio.marketjunior.com</em>, el usuario acepta de manera explícita los presentes Términos y Condiciones de uso del servicio digital.</p>
+                <p><strong>2. Naturaleza del Servicio:</strong> Negocioalcambio provee herramientas digitales para la conversión de divisas, cotizaciones comerciales y cálculo rápido basadas en la tasa oficial publicada por el Banco Central de Venezuela (BCV).</p>
+                <p><strong>3. Licencia Vitalicia y Pago:</strong> El acceso a la plataforma se otorga mediante un pago único promocional de <strong>$4.99 USD</strong> (precio original de $9.99 USD) calculado a la tasa oficial del BCV vigente al momento de la compra.</p>
+                <p><strong>4. Uso Responsable:</strong> La herramienta sirve como asistente contable y de cobro. El usuario es responsable de verificar los montos finales en sus transacciones comerciales.</p>
+                <p><strong>5. Modificaciones del Servicio:</strong> Nos reservamos el derecho de actualizar la plataforma para incluir mejoras de rendimiento y seguridad.</p>
+            </div>
+            <div class="p-4 border-t border-app-border bg-[#182238] text-right">
+                <button onclick="closeModal('modal-terminos')" class="bg-app-blue text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-app-blueHover">Entendido y Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- MODAL: POLÍTICAS DE PRIVACIDAD             -->
+    <!-- ========================================== -->
+    <div id="modal-privacidad" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-app-card rounded-2xl max-w-2xl w-full max-h-[80vh] flex flex-col shadow-2xl overflow-hidden border border-app-border">
+            <div class="p-6 border-b border-app-border flex justify-between items-center bg-[#182238]">
+                <h3 class="text-xl font-bold text-white">Políticas de Privacidad</h3>
+                <button onclick="closeModal('modal-privacidad')" class="text-slate-400 hover:text-white p-1">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-300 leading-relaxed">
+                <p><strong>1. Protección de Datos:</strong> En <em>negocioalcambio.marketjunior.com</em> garantizamos que tus datos personales no son comercializados ni compartidos con terceros bajo ninguna circunstancia.</p>
+                <p><strong>2. Información Recopilada:</strong> Solo recopilamos los datos estrictamente necesarios (correo o número de contacto) para procesar la orden, coordinar la activación y validar los comprobantes de pago.</p>
+                <p><strong>3. Almacenamiento Local:</strong> Para mejorar la velocidad y mantener tus preferencias activas en tu dispositivo, la aplicación hace uso de almacenamiento local seguro en el navegador web.</p>
+                <p><strong>4. Contacto Oficial:</strong> Ante dudas respecto a la privacidad de tu información, puedes enviar un mensaje a <em>soporte@marketjunior.com</em>.</p>
+            </div>
+            <div class="p-4 border-t border-app-border bg-[#182238] text-right">
+                <button onclick="closeModal('modal-privacidad')" class="bg-app-blue text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-app-blueHover">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- MODAL REGISTRO DE COMPRA                    -->
+    <!-- ========================================== -->
+    <div id="modalRegistroCliente" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-[#151d30] border border-[#25324d] rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-left my-8">
+            
+            <!-- Botón de Cierre -->
+            <button type="button" onclick="closeRegisterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Brand Header -->
+            <div class="flex items-center space-x-2.5 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-amber-500/20">
+                    <span class="text-2xl font-extrabold text-slate-900">$</span>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-app-gold">Negocio<span class="text-red-500">alcambio</span></span>
+                    <span class="block text-[10px] text-slate-400 font-medium -mt-1 tracking-wider">marketjunior.com</span>
+                </div>
+            </div>
+
+            <!-- Modal Heading -->
+            <div class="mb-6">
+                <div class="inline-flex items-center space-x-1.5 bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1 rounded-full text-xs font-bold mb-3">
+                    <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i>
+                    <span>Oferta Reservada: $4.99 USD (Tasa BCV)</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-white tracking-tight">Completa tus datos para comprar</h3>
+                <p class="text-xs text-slate-400 mt-1">Te redirigiremos a WhatsApp con los datos de Pago Móvil para activar tu acceso inmediato.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="formRegistroCliente" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">
+                        Nombre o Nombre del Negocio <span class="text-amber-400">*</span>
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            <i data-lucide="user" class="w-4 h-4"></i>
+                        </div>
+                        <input type="text" name="nombre" id="inputNombre" required placeholder="Ej: Abasto La Bendición / Carlos" 
+                            class="w-full pl-10 pr-4 py-3 bg-[#0f172a] border border-[#25324d] rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">
+                        Número de WhatsApp <span class="text-amber-400">*</span>
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </div>
+                        <input type="tel" name="telefono" id="inputTelefono" required placeholder="Ej: 04121234567" 
+                            class="w-full pl-10 pr-4 py-3 bg-[#0f172a] border border-[#25324d] rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+                    </div>
+                </div>
+
+                <button type="submit" id="btnGuardarCliente" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center space-x-2 text-base mt-2">
+                    <span>Continuar al Pago por WhatsApp</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+
+                <p class="text-[11px] text-center text-slate-400 mt-3">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400 inline mr-1"></i>
+                    Tus datos están seguros y no serán compartidos.
+                </p>
+            </form>
+
+            <!-- Success Redirection Message -->
+            <div id="mensajeExito" class="hidden text-center py-6 space-y-4">
+                <div class="w-16 h-16 bg-emerald-500/20 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+                    <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-white">¡Orden Registrada!</h4>
+                    <p class="text-xs text-slate-300 mt-2">Te estamos redirigiendo a WhatsApp para enviarte los datos de Pago Móvil y procesar tu activación...</p>
+                </div>
+                <div class="flex justify-center items-center space-x-2 text-app-gold text-xs font-semibold animate-pulse">
+                    <i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>
+                    <span>Abriendo WhatsApp...</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC                           -->
+    <!-- ========================================== -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Asignar año dinámico en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // LÓGICA DE TEMPORIZADOR DE CONTEO REGRESIVO (10 MINUTOS)
+        function startCountdown() {
+            let duration = 10 * 60; // 10 minutos en segundos
+            const timerDisplay = document.getElementById('countdown-timer');
+
+            const interval = setInterval(() => {
+                let minutes = Math.floor(duration / 60);
+                let seconds = duration % 60;
+
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                if (timerDisplay) {
+                    timerDisplay.textContent = `${minutes}:${seconds}`;
+                }
+
+                if (--duration < 0) {
+                    duration = 10 * 60; // Reiniciar ciclo
+                }
+            }, 1000);
+        }
+        startCountdown();
+
+        // Control de Modales Genéricos
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Control de Modal de Registro / Compra
+        function openRegisterModal() {
+            const modal = document.getElementById('modalRegistroCliente');
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeRegisterModal() {
+            const modal = document.getElementById('modalRegistroCliente');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Cerrar modal al hacer clic en el backdrop
+        window.onclick = function(event) {
+            if (event.target.classList.contains('bg-slate-950/80') || event.target.classList.contains('bg-slate-950/85')) {
+                event.target.classList.add('hidden');
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Configuración del endpoint de Google Apps Script
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOhjdjtjMAn6Z9ESTsLWyt-yeggzpcoqnDxm6nlr3nfNLRuIz1G8kNVWmi_3YZOQPZ/exec';
+
+        // Manejo del envío del Formulario de Compra
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('formRegistroCliente').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // EVENTO DE COMPRA (PURCHASE) EN META PIXEL
+                try {
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Purchase', {
+                            value: 4.99,
+                            currency: 'USD'
+                        });
+                    }
+                } catch(err) {
+                    console.log('Pixel error:', err);
+                }
+
+                const btnSubmit = document.getElementById('btnGuardarCliente');
+                const mensajeExito = document.getElementById('mensajeExito');
+                const formElement = document.getElementById('formRegistroCliente');
+
+                const nombre = document.getElementById('inputNombre').value;
+                const telefono = document.getElementById('inputTelefono').value;
+
+                btnSubmit.innerText = 'Procesando...';
+                btnSubmit.disabled = true;
+
+                // Preparación de datos para el endpoint
+                const payload = new URLSearchParams();
+                payload.append('nombre', nombre);
+                payload.append('telefono', telefono);
+                payload.append('fecha', new Date().toLocaleString('es-VE'));
+
+                fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: payload
+                })
+                .then(() => {
+                    formElement.style.display = 'none';
+                    mensajeExito.style.display = 'block';
+
+                    localStorage.setItem('clienteBodegaRegistrado', 'true');
+
+                    // SCRIPT DE MENSAJE DE VENTA EFECTIVA PARA WHATSAPP
+                    const mensajeWhatsApp = `¡Hola, *${nombre}*! 👋\n\n` +
+                        `¡Gracias por tu compra en *Negocioalcambio*! 🚀 Tu cupón de **50% DE DESCUENTO** ($4.99 USD) ha sido reservado con éxito.\n\n` +
+                        `📌 *DATOS PARA EL PAGO MÓVIL:*\n` +
+                        `• *Banco:* BNC (0191)\n` +
+                        `• *Teléfono:* 04169485195\n` +
+                        `• *Cédula / RIF:* 21271099\n` +
+                        `• *Monto:* $4.99 USD (Calculado a la Tasa Oficial del BCV del día)\n\n` +
+                        `📲 *PASOS PARA ACTIVACIÓN INMEDIATA:*\n` +
+                        `1️⃣ Realiza el Pago Móvil.\n` +
+                        `2️⃣ Envía el capture o comprobante por este mismo chat.\n` +
+                        `3️⃣ Te activaremos tu acceso vitalicio a la plataforma de inmediato.\n\n` +
+                        `✨ *¡Empieza a calcular tus precios sin perder dinero!* Quedo a la espera de tu comprobante.\n\n` +
+                        `*(Cliente: ${nombre} - Teléfono: ${telefono})*`;
+
+                    const textoCodificado = encodeURIComponent(mensajeWhatsApp);
+                    const urlWhatsApp = `https://wa.me/584243800296?text=${textoCodificado}`;
+
+                    setTimeout(() => {
+                        closeRegisterModal();
+                        window.location.href = urlWhatsApp;
+                    }, 1800);
+                })
+                .catch(error => {
+                    console.error('Error al registrar:', error);
+                    const mensajeFallback = `Hola, quiero concretar mi compra en Negocioalcambio. Nombre: ${nombre}, Teléfono: ${telefono}`;
+                    window.location.href = `https://wa.me/584243800296?text=${encodeURIComponent(mensajeFallback)}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
